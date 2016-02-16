@@ -4,7 +4,6 @@ import static org.junit.Assert.assertNotNull;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
-import javax.enterprise.inject.spi.Extension;
 import javax.inject.Inject;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -16,12 +15,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
 
-import bug.ThroughProducerTest.EmptyExtension;
-
-public @CdiExtensions(EmptyExtension.class) class ThroughProducerTest {
-	
-	 // to avoid deltaspike complaining about missing classes...
-	public static class EmptyExtension implements Extension {}
+public @CdiExtensions class ThroughProducerTest {
 	
 	public static class JAXBContextProducer {
 		
